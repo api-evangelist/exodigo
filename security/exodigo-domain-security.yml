@@ -1,0 +1,16 @@
+generated: '2026-08-04'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: www.exodigo.com
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  6 09:58:30 2026 GMT
+  hsts: null
+domains:
+- domain: exodigo.com
+  dnssec: true
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine

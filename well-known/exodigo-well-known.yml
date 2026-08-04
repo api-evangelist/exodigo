@@ -1,0 +1,97 @@
+generated: '2026-08-04'
+method: probed
+source: live probes of /.well-known/ on Exodigo hosts
+note: >-
+  Exodigo publishes no /.well-known/ discovery documents. The site is a Vercel-hosted
+  marketing/corporate site that answers every unmatched path with an HTML 404 page, so
+  each probe below is a genuine miss, not a soft 200. The one machine-readable document
+  the company does publish for agents is /llms.txt (saved to llms/exodigo-llms.txt).
+hosts:
+  - host: https://www.exodigo.com
+    documents:
+      - path: /.well-known/security.txt          # RFC 9116
+        status: 404
+      - path: /.well-known/openid-configuration
+        status: 404
+      - path: /.well-known/oauth-authorization-server   # RFC 8414
+        status: 404
+      - path: /.well-known/oauth-protected-resource     # RFC 9728
+        status: 404
+      - path: /.well-known/api-catalog           # RFC 9727
+        status: 404
+      - path: /.well-known/ai-plugin.json
+        status: 404
+      - path: /.well-known/agent-card.json       # A2A 1.0.0
+        status: 404
+      - path: /.well-known/agent.json            # A2A pre-0.3 legacy
+        status: 404
+      - path: /llms.txt
+        status: 200
+        content_type: text/plain; charset=utf-8
+        file: ../llms/exodigo-llms.txt
+      - path: /robots.txt
+        status: 200
+        note: 'User-Agent: * Allow: / — Disallow: /api/ (internal site routes, not a public API)'
+      - path: /sitemap.xml
+        status: 200
+        note: 39 URLs, marketing/press/project pages only
+  - host: https://learn.exodigo.com
+    vendor: Reach360 (third-party LMS, CNAME custom.reach360.com)
+    catch_all: true
+    rejected: true
+    note: >-
+      Answers HTTP 200 with the same SPA HTML shell for EVERY path, including
+      /openapi.json, /llms.txt, /.well-known/agent-card.json and a random
+      nonexistent control path. All 200s here are false positives and are
+      rejected — no machine-readable document is actually served.
+    documents:
+      - path: /openapi.json
+        status: 200
+        content_type: text/html
+        rejected: html-catch-all
+      - path: /.well-known/agent-card.json
+        status: 200
+        content_type: text/html
+        rejected: html-catch-all
+      - path: /llms.txt
+        status: 200
+        content_type: text/html
+        rejected: html-catch-all
+  - host: https://content.exodigo.com
+    vendor: Enablix (third-party content enablement, CNAME exodigo.enablix.com)
+    documents:
+      - path: /llms.txt
+        status: 404
+      - path: /openapi.json
+        status: 404
+      - path: /.well-known/agent-card.json
+        status: 404
+      - path: /api-docs
+        status: 401
+        note: vendor platform route, gated — not an Exodigo API surface
+x-evidence:
+  fetched: '2026-08-04'
+  method: HTTP GET with redirects followed
+  hosts_probed:
+    - www.exodigo.com
+  subdomain_enumeration:
+    source: https://api.certspotter.com/v1/issuances?domain=exodigo.com&include_subdomains=true
+    hosts_in_certificate_transparency:
+      - www.exodigo.com
+      - content.exodigo.com
+      - learn.exodigo.com
+      - iphones.exodigo.com
+  subdomains_checked_no_dns:
+    - api.exodigo.com
+    - app.exodigo.com
+    - docs.exodigo.com
+    - developer.exodigo.com
+    - portal.exodigo.com
+    - platform.exodigo.com
+    - trust.exodigo.com
+    - security.exodigo.com
+    - status.exodigo.com
+    - blog.exodigo.com
+    - my.exodigo.com
+    - client.exodigo.com
+    - maps.exodigo.com

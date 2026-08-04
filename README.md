@@ -42,5 +42,23 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Exodigo is a company surfaced via the API Evangelist harvest backlog (source: secondary-market) and added to the network as a stub for full-pipeline profiling.
-- https://forgeglobal.com/exodigo_stock/
+Exodigo is a subsurface intelligence company that maps what is underground and above ground without
+digging. Founded in 2021 and headquartered in the San Francisco Bay Area, it fuses ground-penetrating
+radar, electromagnetic (TDEM/FDEM), magnetic gradiometry and electrical sensing with GPS-RTK
+positioning, then processes the combined signal with AI to produce geolocated 3D maps of buried
+utilities, foundations and geotechnical conditions.
+
+- Website: https://www.exodigo.com/
+- Insights / press: https://www.exodigo.com/insights
+- Contact: https://www.exodigo.com/connect
+
+## API surface
+
+**No public API.** A full contract-discovery pass on 2026-08-04 found no developer portal, no API
+documentation, no OpenAPI/Swagger/AsyncAPI/GraphQL specification, no SDK on any public package
+registry, no MCP server and no A2A agent card. Exodigo delivers its output as GIS and CAD artifacts
+(Esri ArcGIS, AutoCAD, BIM) and through a private client portal. The one machine-readable document it
+publishes for agents is `/llms.txt`, captured verbatim in `llms/`.
+
+See `well-known/exodigo-well-known.yml` for the full probe record, including the
+`learn.exodigo.com` SPA catch-all that answers 200 for every path and was rejected as a false positive.
