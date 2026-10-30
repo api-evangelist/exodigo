@@ -64,23 +64,83 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Exodigo is a subsurface intelligence company that maps what is underground and above ground without
-digging. Founded in 2021 and headquartered in the San Francisco Bay Area, it fuses ground-penetrating
-radar, electromagnetic (TDEM/FDEM), magnetic gradiometry and electrical sensing with GPS-RTK
-positioning, then processes the combined signal with AI to produce geolocated 3D maps of buried
-utilities, foundations and geotechnical conditions.
+Exodigo is a subsurface intelligence company that maps what is underground and above ground without digging. Founded in 2021 by former Israeli intelligence officers and headquartered in the San Francisco Bay Area, it fuses ground-penetrating radar, electromagnetic (TDEM/FDEM), magnetic gradiometry and electrical sensing with GPS-RTK positioning, then processes the combined signal with AI to produce geolocated 3D maps of buried utilities, foundations and geotechnical conditions. Products span ExoInfo remote data intelligence (AI compilation of public records, engineering documents and imagery), on-site reality capture, AI engineering and digitization, and utility relocation services. Deliverables are handed to customers as GIS and CAD artifacts (Esri ArcGIS, AutoCAD, BIM) and through a client portal rather than a public developer API — as of this profiling pass Exodigo publishes no developer portal, API documentation, OpenAPI/AsyncAPI specification, SDK or MCP server. Customers include LA Metro, Caltrans, National Grid, VINCI Construction and state DOTs.
 
-- Website: https://www.exodigo.com/
-- Insights / press: https://www.exodigo.com/insights
-- Contact: https://www.exodigo.com/connect
+**Areas:** Company · Subsurface Intelligence · Underground Mapping · Geophysics · Infrastructure · Construction · Utilities · Geospatial · Artificial Intelligence · Engineering Services
 
-## API surface
+## Exodigo on APIs.io
 
-**No public API.** A full contract-discovery pass on 2026-08-04 found no developer portal, no API
-documentation, no OpenAPI/Swagger/AsyncAPI/GraphQL specification, no SDK on any public package
-registry, no MCP server and no A2A agent card. Exodigo delivers its output as GIS and CAD artifacts
-(Esri ArcGIS, AutoCAD, BIM) and through a private client portal. The one machine-readable document it
-publishes for agents is `/llms.txt`, captured verbatim in `llms/`.
+Everything profiled for Exodigo is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/exodigo/](https://apis.io/providers/exodigo/)** — or go straight to one of the APIs or properties below.
 
-See `well-known/exodigo-well-known.yml` for the full probe record, including the
-`learn.exodigo.com` SPA catch-all that answers 200 for every path and was rejected as a false positive.
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### Security (1)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Exodigo Domain Security](https://apis.io/security/exodigo/exodigo-domain-security/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.exodigo.com/)
+- [Support](https://www.exodigo.com/connect)
+- [Blog](https://www.exodigo.com/insights)
+- [Terms of service](https://www.exodigo.com/terms-of-use)
+- [Privacy policy](https://www.exodigo.com/privacy)
+
+## API Evangelist rating
+
+**Kin Score 11.0** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 0.0 |
+| Contract governance | 0.0 |
+| Operational transparency | 0.0 |
+| Developer ergonomics | 7.1 |
+| Access clarity | 21.1 |
+
+**Agent readiness 0.0** — human-only
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | — |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 10.8** — Energy & Utilities
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/exodigo/](https://apis.io/providers/exodigo/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Exodigo: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/exodigo/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
